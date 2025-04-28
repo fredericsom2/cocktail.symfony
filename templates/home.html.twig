@@ -1,0 +1,35 @@
+{# Inclusion du fichier de l'en-tête (header commun) #}
+{% include 'partials/_header.html.twig' %}
+
+<h1>Recettes de Cocktails</h1>
+
+<div class="cocktail-container">
+    <!-- {# Boucle sur chaque cocktail dans la liste "cocktails" #} -->
+    {% for cocktail in cocktails %}
+        <div class="cocktail">
+
+            <!-- {# Affichage de l'image du cocktail #} -->
+            <img src="{{ cocktail.image }}" alt="Image de {{ cocktail.nom }}">
+
+            <!-- {# Lien vers la page de détail du cocktail avec passage de l'ID en GET #} -->
+            <a href="{{ path('old') }}?id={{cocktail.id}}">Voir le détail du cocktail</a>
+
+            <!-- {# Titre avec le nom du cocktail #} -->
+            <h2>{{ cocktail.nom }}</h2>
+
+            <div class="ingredients">
+               
+            </div>
+
+            <!-- {# Affichage de la date de création du cocktail (formatée en jour/mois/année) #} -->
+            <div class="date">
+                Créé le {{ cocktail.date_creation|date('d/m/Y') }}
+            </div>
+
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
+

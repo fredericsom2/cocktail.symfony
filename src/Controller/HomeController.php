@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController {
 
 // Déclare une route pour la page d’accueil ("/")
-	#[Route('/list-cocktail', name: "home")]
+	#[Route('/home', name: "home")]
 	public function displayHome() {
         
 $cocktails = [
@@ -93,7 +93,7 @@ $cocktails = [
 
 
 
-return $this->render('list-cocktail.html.twig', [
+return $this->render('home.html.twig', [
     'cocktails' => $cocktails
 ]);
 }

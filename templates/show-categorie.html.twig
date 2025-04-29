@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block metatitle %}
+	{{categories.nom}}
+{% endblock metatitle %}
+
+{% block main %}
+
+
+
+
+<h1> categories</h1>
+
+<div class="categories-container">
+ 
+        <div class="categories">
+            <img src="{{ categories.image }}" alt="Image de {{ categories.nom }}">
+            <h2>{{ categories.nom }}</h2>
+            <div class="ingredients">
+                <strong>Ingrédients :</strong>
+            
+            </div>
+            <div class="description">{{ categories.description }}</div>
+            
+        </div>
+</div>
+
+
+{% endblock main %}

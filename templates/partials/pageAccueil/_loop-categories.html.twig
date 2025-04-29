@@ -1,16 +1,16 @@
 <div class="categories-container">
     <!-- {# Boucle sur chaque cocktail dans la liste "categories" #} -->
-    {% for categories in categories %}
+    {% for categorie in categories %}
         <div class="categories">
 
           <!-- {# Affichage de l'image du cocktail #} -->
-            <img src="{{ categories.image }}" alt="Image de {{ categories.nom }}">
+            <img src="{{ categorie.image }}" alt="Image de {{ categorie.nom }}">
 
             <!-- {# Lien vers la page de détail du categories avec passage de l'ID en GET #} -->
-            <a href="{{ path('categories', {'id' : categories.id }) }}">Voir le détail des nouveaux cocktails</a>
+            <a href="{{ path('singlecategorie', {'id' : categorie.id }) }}">Voir le détail des nouvelles catégories de cocktails</a>
 
             <!-- {# Titre avec le nom du cocktail #} -->
-            <h2>{{ categories.nom }}</h2>
+            <h2>{{ categorie.nom }}</h2>
 
             <div class="ingredients">
                

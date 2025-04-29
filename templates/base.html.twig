@@ -1,7 +1,21 @@
 
-{% include 'partials/_header.html.twig' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block metatitle %}{% endblock metatitle %}</title>
+<link rel="stylesheet" href="{{ asset('assets/style.css') }}" />
+</head>
 
+<body>
 
+	<header>
+    <div class="header">
+       
+                <li><a href="{{ path('home') }}">Voir TOUS les cocktails</a></li>
+                 <li><a href="{{ path('categories') }}">Voir les  nouveaux cocktails</a></li>
+           
+    </div>
+</header>
 
 
 {% include 'partials/_aside.html.twig' %}

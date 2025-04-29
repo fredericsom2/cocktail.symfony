@@ -17,12 +17,12 @@ class CategoriesController extends AbstractController {
             1 => [
                 "id" => 1,
                 "nom" => "cocktail coca",
-                'image'         => 'https://punchdrink.com/wp-content/uploads/2014/07/Cuba-Libre.jpg',
+                'image'         => 'https://sf1.topsante.com/wp-content/uploads/topsante/2023/09/mocktail-orange-sanguine-romarin-324x232.jpeg',
                 "description" => "cocktails classiques avec alcool"
             ],
             2 => [
                 "id" => 2,
-                'image'         => 'https://images.immediate.co.uk/production/volatile/sites/30/2020/04/mocktail-3b9ab7d.jpg',
+                'image'         => 'https://sf1.topsante.com/wp-content/uploads/topsante/2023/09/mocktail-orange-sanguine-romarin-324x232.jpeg',
                 "nom" => "mocktail",
                 "description" => "cocktails sans alcool"
             ],

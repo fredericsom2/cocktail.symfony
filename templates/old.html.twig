@@ -1,6 +1,8 @@
-{% include 'partials/_header.html.twig' %}
+{% extends 'base.html.twig' %}
 
-<h1>Recettes de Cocktails</h1>
+{% block main %}
+
+<h1> Cocktails</h1>
 
 <div class="cocktail-container">
         <div class="cocktail">
@@ -21,3 +23,5 @@
 
 </body>
 </html>
+
+{% endblock main %}

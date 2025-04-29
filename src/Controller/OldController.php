@@ -2,14 +2,19 @@
 
 namespace App\Controller;
 
+// Importation des classes nécessaires de Symfony
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-// Contrôleur de la page d'accueil
+// Définition du contrôleur OldController qui hérite du contrôleur de base de Symfony
 class OldController extends AbstractController
 {
-    #[Route('/old', name: 'old')]
-    public function displayOld()
+    // Déclaration d'une route qui sera accessible via l'URL '/old' et portera le nom 'old'
+    #[Route('/old/{id}', name: 'old')]
+    public function displayOld($id)
+    
+
 
     {
         $cocktails = [
@@ -84,11 +89,8 @@ class OldController extends AbstractController
                 'description' => 'Amertume élégante et notes d’agrumes pour ce grand classique italien.',
             ],
         ];
-    // Récupère l'identifiant du cocktail depuis l'URL (paramètre GET 'id')
-    $cocktailId = $_GET['id'];
 
-    // Utilise l'identifiant pour récupérer le cocktail correspondant dans le tableau $cocktails
-    $cocktail = $cocktails[$cocktailId];
+        $cocktail = $cocktails[$id];
 
     // Rend (affiche) la page 'old.html.twig' en passant le cocktail récupéré aux variables de la vue
     return $this->render('old.html.twig', [
@@ -96,4 +98,6 @@ class OldController extends AbstractController
     ]);
 
     }
+
+
 }

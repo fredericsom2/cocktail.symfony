@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController {
 
 // Déclare une route pour la page d’accueil ("/")
-	#[Route('/home', name: "home")]
+	#[Route('/', name: "home")]
 	public function displayHome() {
         
 $cocktails = [

@@ -1,0 +1,25 @@
+
+{% include 'partials/_header.html.twig' %}
+
+
+
+
+{% include 'partials/_aside.html.twig' %}
+
+
+{% block main %} 
+
+
+
+
+{#  Le fichier base.html.twig sert de modèle principal 
+ Il contient la structure HTML commune à toutes tes pages : en-tête, barre latérale,  Au lieu de réécrire le même code HTML sur chaque page,
+ tu centralises tout dans base.html.twig, puis tu le réutilises avec {% extends 'base.html.twig' %} dans tes pages enfants.  #} 
+
+{% endblock main %}
+
+
+{% include 'partials/_footer.html.twig' %}
+
+
+

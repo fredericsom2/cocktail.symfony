@@ -40,9 +40,17 @@ class CategoriesRepository {
             ],
         ];
 
-// Retourne le tableau des cocktails
-return $categories;
+    // Retourne le tableau des cocktails
+    return $categories;
 
-}
+    }
 
+    public function findOneById($id) {
+
+        $categories = $this->findAll();
+        $category = $categories[$id];
+
+        return $category;
+
+    }
 }

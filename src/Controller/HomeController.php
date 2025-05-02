@@ -18,12 +18,11 @@ class HomeController extends AbstractController {
 		// pour appeler la fonction (méthode) findAll
 		// qui returne tous les cocktails
 		$cocktailsRepository = new CocktailsRepository;
-		$cocktails = $cocktailsRepository->findAll();
-        
+		$cocktails = $cocktailsRepository->findAll();      
 
-return $this->render('home.html.twig', [
-    'cocktails' => $cocktails
-]);
-}
+		return $this->render('home.html.twig', [
+			'cocktails' => $cocktails
+		]);
+	}
 
 }

@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Repository\CategoriesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -10,39 +11,34 @@ class CategoriesController extends AbstractController {
 
 // Déclare une route pour la page d’accueil ("/categories")
 	#[Route('/categories', name: "categories")]
-	public function displayCategories() {
+	public function displayCategories(CategoriesRepository $CategoriesRepository) {
         
-
-		$categories = [
-            1 => [
-                "id" => 1,
-                "nom" => "cocktail coca",
-                'image'         => 'https://sf1.topsante.com/wp-content/uploads/topsante/2023/09/mocktail-orange-sanguine-romarin-324x232.jpeg',
-                "description" => "cocktails classiques avec alcool"
-            ],
-            2 => [
-                "id" => 2,
-                'image'         => 'https://sf1.topsante.com/wp-content/uploads/topsante/2023/09/mocktail-orange-sanguine-romarin-324x232.jpeg',
-                "nom" => "mocktail",
-                "description" => "cocktails sans alcool"
-            ],
-            3 => [
-                "id" => 3,
-                'image'         => 'https://www.1001cocktails.com/wp-content/uploads/1001cocktails/2023/01/shutterstock_167704775.jpg',
-                "nom" => "shooter",
-                "description" => "moins de 25 cl"
-            ],
-            4 => [
-                "id" => 4,
-                'image'         => 'https://www.1001cocktails.com/wp-content/uploads/1001cocktails/2023/01/shutterstock_167704775.jpg',
-                "nom" => "cocktails soft",
-                "description" => "cocktails sans alcool fort"
-            ],
-        ];
+      
+		$categories = $CategoriesRepository->findAll(); 
 
         return $this->render('categories.html.twig', [
             'categories' => $categories
         ]);
-        }
+    }
+
+    // Déclare une route pour la page d’accueil ("/categories")
+	#[Route('/show-categorie/{id}', name: "singlecategorie")]
+	public function displaySingleCategorie($id,CategoriesRepository $CategoriesRepository) {
         
-        }
+
+        // je créé une instance de la classe CocktailsRepository
+		// pour appeler la fonction (méthode) 
+		// qui retourne tous les cocktails
+		
+		$categories = $CategoriesRepository->findOneById($id); 
+        
+		
+
+        
+
+        return $this->render('show-categorie.html.twig', [
+            'categories' => $categories
+        ]);
+    }
+        
+}

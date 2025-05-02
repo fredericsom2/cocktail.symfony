@@ -84,9 +84,22 @@ class CocktailsRepository {
             ],
         ];
 
-// Retourne le tableau des cocktails
-		return $cocktails;
+        return $cocktails;
 
-	}
+    }
+
+    
+
+    // Créez une fonction findOneById dans le repository des catégories, 
+    // qui renvoie une catégorie (depuis la liste des catégories) en fonction de son id
+    // Utilisez cette fonction dans le controleur qui affiche les détails d'une catégorie par l'id
+    public function findOneById($id) {
+
+        $cocktails = $this->findAll();
+        $cocktail = $cocktails[$id];
+
+        return $cocktail;
+
+    }
 
 }
